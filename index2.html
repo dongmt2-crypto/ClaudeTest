@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DongMT Portal</title>
+<meta name="description" content="DongMT Portal - trang tổng hợp các ứng dụng và kênh của DongMT.">
+<meta name="theme-color" content="#070a12">
+<style>
+  :root{
+    --ink:#eaeefb;
+    --muted:#98a2c0;
+    --card:rgba(255,255,255,.045);
+    --ring:rgba(212,175,55,.18);
+    --gold:#d4af37;
+    --gold-2:#f6e7b4;
+    --shadow:0 24px 50px -28px rgba(0,0,0,.95);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1100px 600px at 12% -12%,rgba(52,68,120,.5),transparent 60%),
+      radial-gradient(900px 520px at 92% 112%,rgba(84,54,110,.45),transparent 58%),
+      linear-gradient(175deg,#0b1020 0%,#070a12 55%,#05060b 100%);
+    background-color:#070a12;
+    background-attachment:fixed;
+    min-height:100vh;
+    display:flex;
+    padding:40px 20px;
+    position:relative;
+    overflow-x:hidden;
+  }
+  .blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.28;z-index:0;pointer-events:none;animation:float 16s ease-in-out infinite}
+  .blob.b1{width:420px;height:420px;background:radial-gradient(circle at 30% 30%,#5f78d8,#c9a94a);top:-120px;left:-100px}
+  .blob.b2{width:380px;height:380px;background:radial-gradient(circle at 30% 30%,#b46ba0,#d4af37);bottom:-140px;right:-90px;animation-delay:-5s}
+  .blob.b3{width:300px;height:300px;background:radial-gradient(circle at 30% 30%,#2f9f9a,#7f6fd0);top:42%;right:18%;animation-delay:-9s}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-24px) scale(1.08)}}
+  .wrap{position:relative;z-index:1;width:100%;max-width:980px;margin:auto}
+  header{text-align:center;margin-bottom:44px;animation:rise .6s ease both}
+  h1{
+    font-size:clamp(2.4rem,7vw,3.6rem);margin:0;letter-spacing:.01em;font-weight:800;
+    background:linear-gradient(115deg,#f2faff 0%,#7dd3ff 30%,#3b82f6 62%,#a8dcff 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 10px 28px rgba(80,160,255,.3));
+  }
+  header .tag{margin:12px 0 0;color:var(--muted);font-size:.95rem;letter-spacing:.16em;text-transform:uppercase}
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .card{
+    position:relative;display:flex;flex-direction:column;gap:8px;
+    padding:26px 22px;border-radius:20px;text-decoration:none;color:inherit;
+    background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.02));
+    border:1px solid var(--ring);
+    box-shadow:var(--shadow);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;
+    animation:rise .6s ease both;
+  }
+  .card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,var(--a1),var(--a2))}
+  .card::after{content:"";position:absolute;inset:0;border-radius:20px;pointer-events:none;background:radial-gradient(120% 60% at 50% -10%,rgba(255,255,255,.08),transparent 60%)}
+  .card:hover{transform:translateY(-6px);box-shadow:0 26px 52px -18px var(--glow),var(--shadow);border-color:rgba(212,175,55,.45)}
+  .ico{font-size:2rem;width:56px;height:56px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,var(--a1),var(--a2));box-shadow:0 10px 22px -10px var(--glow),inset 0 1px 0 rgba(255,255,255,.35);margin-bottom:6px}
+  .card h2{margin:0;font-size:1.18rem;font-weight:700;letter-spacing:.01em}
+  .card p{margin:0;color:var(--muted);font-size:.93rem;flex:1}
+  .url{margin-top:12px;font-size:.82rem;font-weight:600;color:var(--gold-2);word-break:break-all;opacity:.85}
+  .card.c1{--a1:#6f63e8;--a2:#a978f5;--glow:rgba(111,99,232,.45)}
+  .card.c2{--a1:#17a89c;--a2:#3fc4e0;--glow:rgba(23,168,156,.4)}
+  .card.c3{--a1:#d98a3c;--a2:#cf5c8c;--glow:rgba(207,92,140,.42)}
+  .card:nth-child(1){animation-delay:.05s}
+  .card:nth-child(2){animation-delay:.13s}
+  .card:nth-child(3){animation-delay:.21s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.blob,.card,header{animation:none}}
+  .social-rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:2}
+  .soc{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+    background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.03));
+    border:1px solid rgba(212,175,55,.25);
+    box-shadow:0 14px 30px -16px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.12);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;text-decoration:none}
+  .soc svg{width:22px;height:22px;fill:currentColor}
+  .soc:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 18px 36px -14px var(--glow);border-color:rgba(212,175,55,.6)}
+  .soc.yt{color:#ff4d4d;--glow:rgba(255,0,0,.4)}
+  .soc.blog{color:#f6a54a;--glow:rgba(249,115,22,.4)}
+  .soc.fb{color:#5b9bff;--glow:rgba(24,119,242,.4)}
+  @media (max-width:1180px){
+    body{padding-bottom:100px}
+    .social-rail{top:auto;bottom:18px;right:auto;left:50%;transform:translateX(-50%);flex-direction:row}
+  }
+  @media (prefers-reduced-motion:reduce){.soc{transition:none}}
+</style>
+</head>
+<body>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <main class="wrap">
+    <header>
+      <h1>DongMT Portal</h1>
+      <p class="tag">Cổng ứng dụng cá nhân</p>
+    </header>
+    <section class="grid">
+      <a class="card c1" href="https://mynotebookai.dongmt.com/" target="_blank" rel="noopener">
+        <div class="ico">📝</div>
+        <h2>MyNoteBook AI</h2>
+        <p>Ứng dụng ghi chú - sử dụng AI</p>
+        <span class="url">mynotebookai.dongmt.com</span>
+      </a>
+      <a class="card c2" href="https://mymusicapp.dongmt.com/" target="_blank" rel="noopener">
+        <div class="ico">🎵</div>
+        <h2>My Music App</h2>
+        <p>Ứng dụng nghe nhạc - sử dụng AI</p>
+        <span class="url">mymusicapp.dongmt.com</span>
+      </a>
+      <a class="card c3" href="https://mynotebookmvc.dongmt.com/" target="_blank" rel="noopener">
+        <div class="ico">📚</div>
+        <h2>MyNoteBook MVC</h2>
+        <p>Ứng dụng ghi chú - viết bằng ASP.NET</p>
+        <span class="url">mynotebookmvc.dongmt.com</span>
+      </a>
+    </section>
+  </main>
+  <nav class="social-rail" aria-label="Kênh của DongMT">
+    <a class="soc yt" href="https://www.youtube.com/@dongmt" target="_blank" rel="noopener" title="YouTube: DongMT Nguyen" aria-label="YouTube - DongMT Nguyen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+    </a>
+    <a class="soc blog" href="http://dongmt2.blogspot.com/" target="_blank" rel="noopener" title="DongMT's Blog" aria-label="DongMT's Blog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h11l5 5v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm10 1.5V9h4.5L14 4.5ZM7 12h10v2H7v-2Zm0 4h10v2H7v-2Zm0-8h5v2H7V8Z"/></svg>
+    </a>
+    <a class="soc fb" href="https://www.facebook.com/dongmt/" target="_blank" rel="noopener" title="Facebook: Dongmt Nguyen" aria-label="Facebook - Dongmt Nguyen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+    </a>
+  </nav>
+</body>
+</html>

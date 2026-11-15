@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Edit(index.html)",
+      "Edit(assets/**)",
+      "Edit(docs/**)",
+      "Edit(CHANGELOG.md)",
+      "Bash(python3 -m http.server:*)",
+      "Bash(npx --yes html-validate:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(git push --force:*)",
+      "Read(.env*)"
+    ]
+  }
+}
