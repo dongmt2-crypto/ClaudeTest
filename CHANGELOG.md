@@ -6,7 +6,7 @@
 - Sửa ký tự "&" trong `<title>` thành `&amp;` để hợp lệ HTML
 - Cập nhật nội dung thật: hero, dự án (YouTube, SAP, blog), kỹ năng, hành trình, liên kết
 - Tích hợp thông tin từ https://dongmt.com/: 3 sản phẩm (MyNoteBook AI, My Music App, MyNoteBook MVC) và liên kết Portal/YouTube/Blog/Facebook/GitHub
-- Thêm email dongmt2@gmail.com và hơn 10 năm kinh nghiệm
+- Thêm  10 năm kinh nghiệm
 - Bật liên kết cho domain sản phẩm trong mục Dự án
 - Bật liên kết cho kênh YouTube và Blog trong Hành trình
 - Đưa số liệu/mô tả của YouTube và Blog sang cột phải trong Hành trình
@@ -18,6 +18,11 @@
 - Sửa footer thành "© 2026 by DongMT"
 - Giảm 50% cỡ chữ tiêu đề hero
 - Đánh dấu các mục đã hoàn thành trong `docs/CONTENT.md`
+- Đổi tiêu đề mục "Dự án chọn lọc" thành "Dự án cá nhân"
+- Mở liên kết dự án trong tab mới
+- Sửa số liệu kênh YouTube thành "hơn 100.000 người đăng ký"
+- Sửa mô tả Blog thành "phân tích và cảm nhận về âm nhạc"
+- Xoá dòng trạng thái "Kênh YouTube đang hoạt động..." và đồng hồ ở hero
 
 ## [1.0.0] - 2026-11-15
 ### Thêm
