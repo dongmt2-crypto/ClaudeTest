@@ -23,6 +23,7 @@
 - Sửa số liệu kênh YouTube thành "hơn 100.000 người đăng ký"
 - Sửa mô tả Blog thành "phân tích và cảm nhận về âm nhạc"
 - Xoá dòng trạng thái "Kênh YouTube đang hoạt động..." và đồng hồ ở hero
+- Thêm _headers để tắt transform ảnh trên Cloudflare và sharpen avatar
 - Thêm ảnh chân dung DongMT.jpg bên phải đoạn giới thiệu hero
 
 ## [1.0.0] - 2026-11-15
