@@ -11,6 +11,7 @@ Giấy sage nhạt, mực xanh rêu đậm, một điểm nhấn vàng nghệ. �
 | `--muted` | #4D6560 | #9FB5AC | Chữ phụ |
 | `--line` | #B9C8BE | #2C4540 | Đường kẻ |
 | `--accent` | #F2B632 | #F2B632 | Nút chính |
+| `--status` | #257A47 | #2E9E5B | Chấm trạng thái |
 
 ## Chữ
 - Tiêu đề: Bricolage Grotesque 800, letter-spacing âm

@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-11-15
 ### Thay đổi
+- Xoá mục "Hành trình" và liên kết nav tương ứng; xoá style `.timeline`
+- Sửa trailing whitespace trong `index.html`
+- Dùng biến `--status` thay vì mã màu hard-code cho chấm trạng thái
+- Cải thiện accessibility: focus-visible dùng `--ink`, reduced-motion tắt cuộn mượt và hover nút, tăng cỡ tiêu đề hero ở mobile, màu chấm trạng thái đạt AA
 - Đổi tên hiển thị từ "Minh Anh" sang "DongMT" trong `index.html` và `CLAUDE.md`
 - Sửa ký tự "&" trong `<title>` thành `&amp;` để hợp lệ HTML
 - Cập nhật nội dung thật: hero, dự án (YouTube, SAP, blog), kỹ năng, hành trình, liên kết
